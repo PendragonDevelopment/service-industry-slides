@@ -268,12 +268,42 @@
         <section>
           <h3>There are three commands you need to know right now:</h3>
           <pre><code class="shell">
-  $ git add
+  $ git add  # stages code changes being tracked
 
-  $ git commit -m
+  $ git commit -m  # commits the changes to a "save point"
 
-  $ git push
+  $ git push  # sends the updated code changes with the save history to a remote repo
           </code></pre>
+        </section>
+        <section>
+          <h2>Sign up for a Github.com account</h2>
+          <h3><a href="https://github.com">https://github.com</a></h3>
+          <h3>Follow the instructions to setup your account: <a href="https://help.github.com/articles/set-up-git/">https://help.github.com/articles/set-up-git/</a></h3>
+          <h3>Ask for help if you run into questions!</h3>
+        </section>
+        <section>
+          <h2>Create a repository:</h2>
+          <h3>username.github.io</h3>
+        </section>
+        <section>
+          <h2>In your terminal:</h2>
+          <ol>
+            <li class="fragment roll-in"><pre><code class="yaml">
+  $ git init
+            </code></pre></li>
+            <li class="fragment roll-in"><pre><code class="yaml">
+  $ git add .
+            </code></pre></li>
+            <li class="fragment roll-in"><pre><code class="yaml">
+  $ git commit -m "Adding my first Jekyll site"
+            </code></pre></li>
+            <li class="fragment roll-in"><pre><code class="yaml">
+  $ git remote add origin git@github.com:username/username.github.io.git
+            </code></pre></li>
+            <li class="fragment roll-in"><pre><code class="yaml">
+  $ git push origin master
+            </code></pre></li>
+          </ol>
         </section>
         <section>
           <h3>Programming in a nutshell: </h3>
