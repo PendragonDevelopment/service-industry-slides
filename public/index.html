@@ -4,9 +4,9 @@
 <head>
   <meta charset="utf-8">
 
-  <title>Vitamin C - Rails Security and HIPAA</title>
+  <title>Intro to Web Development!</title>
 
-  <meta name="description" content="Vitamin C - Rails Security and HIPAA">
+  <meta name="description" content="Intro to Web Development - Service Industry Class">
   <meta name="author" content="Jordan Burke">
 
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -37,8 +37,13 @@
       <!-- Any section element inside of this container is displayed as a slide -->
       <div class="slides">
         <section>
-          <h1>Title goes here</h1>
-          <h2>Subtitle goes here</h2>
+          <h2>Prep for the class:</h2>
+          <h3><a href="http://docs.railsbridge.org/installfest/">http://docs.railsbridge.org/installfest/</a></h3>
+          <h3>Follow the instructions through installing Ruby 2.2.4 and Git</h3>
+        </section>
+        <section>
+          <h1>Getting started with Web Development</h1>
+          <h2>An Introduction to Ruby and Jekyll</h2>
         </section>
         <section>
           <h2>Who am I?</h2>
@@ -50,19 +55,180 @@
           <p>(Shh, the President's enemies think I'm dead)</p>
         </section>
         <section>
+          <h3>Worked in food service since 13</h3>
+          <h3>Was a barista for 10 years</h3>
+          <h3>No degree, kicked out of school, self-taught programmer</h3>
+        </section>
+        <section>
+          <h2>What we're going to learn about today:</h2>
+          <h3 class="fragment roll-in">Ruby: a programming language</h3>
+          <h3 class="fragment roll-in">Jekyll: a static site generator</h3>
+          <h3 class="fragment roll-in">Git: version control software</h3>
+        </section>
+        <section>
+          <h2>Ruby</h2>
+          <h3>Created in 1994 by Yukihiro 'Matz' Matusmoto</h3>
+          <h3>Follows the principles of good user interface design</h3>
+          <h3>Was created to make programmers happy</h3>
+          <h3>Principle of Least Astonishment</h3>
+          <h3>Dynamically typed, object oriented, interpreted</h3>
+        </section>
+        <section>
+          <h2>Let's Try Ruby!</h2>
+          <h3><a href="http://tryruby.org/">http://tryruby.org/</a></h3>
+          <img src="http://bukk.it/awrightawrightawright.gif" alt="" class="no-border">
+        </section>
+        <section>
+          <h3>You can do this on your computer</h3>
           <pre>
-            <code>
-  This is a code slide.
+            <code class="ruby">
+  $ irb
+
+  irb(main):001:0> puts 'Hello, World'
+  Hello, World
+  => nil
             </code>
           </pre>
+        </section>
+        <section>
+          <h2>Anatomy of a web application</h2>
+          <h3 class="fragment roll-in">A User Interface</h3>
+          <h3 class="fragment roll-in">A Server</h3>
+          <h3 class="fragment roll-in">A Datastore</h3>
+          <h3 class="fragment roll-in">Communication between these features</h3>
+        </section>
+        <section>
+          <h2>What is Jekyll?</h2>
+          <h3>A Ruby gem (plugin/service/application framework)</h3>
+          <h3>Pulls information from static files (YAML, Markdown)</h3>
+          <h3>Generates HTML, CSS, and JavaScript</h3>
+          <h3>Gets put on the internet (Github Pages)</h3>
+        </section>
+        <section>
+          <h2>Ruby Gems</h2>
+          <h3>Ruby programs or libraries to expand applications</h3>
+          <h3>Can add functionality and commands to an application</h3>
+          <h3>Popular gems: Rails, Jekyll, Devise</h3>
+        </section>
+        <section>
+          <h2>Markup languages</h2>
+          <h3>Describe and inform the structure of a document</h3>
+          <h3>HTML: HyperText Markup Language</h3>
+          <h3>YAML: Yet Another Markup Language</h3>
+          <h3>Markdown: A more readable markup language that translates to HTML</h3>
+        </section>
+        <section>
+          <h2>Detour: A (brief) history of WWW</h2>
+          <h3>HTML, HTTP, and URIs</h3>
+          <h3>CSS in 1996, JS in 1995</h3>
+        </section>
+        <section>
+          <h2>Back to Jekyll</h2>
+          <h3>Let's get something started:</h3>
+          <pre>
+            <code class="ruby">
+  $ jekyll new mysite # <--- You can call this whatever you want
+            </code>
+          </pre>
+        </section>
+        <section>
+          <h3>Folder structure</h3>
+          <pre><code class="yaml">
+  - mysite
+    .gitignore
+    _config.yml
+    about.md
+    Gemfile
+    Gemfile.lock
+    index.md
+          </code></pre>
+        </section>
+        <section>
+          <h3>Gemfile:</h3>
+          <pre><code class="yaml">
+  source "https://rubygems.org"
+  ruby RUBY_VERSION
+
+  # Hello! This is where you manage which Jekyll version is used to run.
+  # When you want to use a different version, change it below, save the
+  # file and run `bundle install`. Run Jekyll with `bundle exec`, like so:
+  #
+  #     bundle exec jekyll serve
+  #
+  # This will help ensure the proper Jekyll version is running.
+  # Happy Jekylling!
+  gem "jekyll", "3.3.1"
+
+  # This is the default theme for new Jekyll sites. You may change this to anything you like.
+  gem "minima", "~> 2.0"
+
+  # If you want to use GitHub Pages, remove the "gem "jekyll"" above and
+  # uncomment the line below. To upgrade, run `bundle update github-pages`.
+  # gem "github-pages", group: :jekyll_plugins
+
+  # If you have any plugins, put them here!
+  group :jekyll_plugins do
+     gem "jekyll-feed", "~> 0.6"
+  end
+
+          </code></pre>
+        </section>
+        <section>
+          <h3>_config.yml</h3>
+          <pre><code class="yaml">
+  title: Your awesome title
+  email: your-email@domain.com
+  description: > # this means to ignore newlines until "baseurl:"
+    Write an awesome description for your new site here. You can edit this
+    line in _config.yml. It will appear in your document head meta (for
+    Google search results) and in your feed.xml site description.
+  baseurl: "" # the subpath of your site, e.g. /blog
+  url: "" # the base hostname & protocol for your site, e.g. http://example.com
+  twitter_username: jekyllrb
+  github_username:  jekyll
+
+  # Build settings
+  markdown: kramdown
+  theme: minima
+  gems:
+    - jekyll-feed
+  exclude:
+    - Gemfile
+    - Gemfile.lock
+
+          </code></pre>
+        </section>
+        <section>
+          <pre><code class="markdown">
+  ---
+  layout: page
+  title: About
+  permalink: /about/
+  ---
+
+  This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](http://jekyllrb.com/)
+
+  You can find the source code for the Jekyll new theme at:
+  {% include icon-github.html username="jekyll" %} /
+  [minima](https://github.com/jekyll/minima)
+
+  You can find the source code for Jekyll at
+  {% include icon-github.html username="jekyll" %} /
+  [jekyll](https://github.com/jekyll/jekyll)
+
+          </code></pre>
+        </section>
+        <section>
+          <h3>Programming in a nutshell: </h3>
+          <img src="http://bukk.it/programming.jpg" alt="" class="no-border">
         </section>
         <section>
           <h2>Thanks for listening!</h2>
           <h3>Love,</h3>
           <h3>Burt Macklin, FBI</h3>
           <h3>Twitter: <a href="https://twitter.com/PendragonDev">@PendragonDev</a></h3>
-          <h3>Email: <a href="mailto:jordan@vestigo.co">jordan@vestigo.co</a></h3>
-          <h3>Website: <a href="https://vestigo.co">vestigo.co</a></h3>
+          <h3>Email: <a href="mailto:jordan@roundtabledev.com">jordan@roundtabledev.com</a></h3>
+          <h3>Website: <a href="http://roundtabledev.com">roundtabledev.com</a></h3>
         </section>
       </div>
     </div>
